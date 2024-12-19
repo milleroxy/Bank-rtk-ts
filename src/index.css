@@ -2,12 +2,12 @@
 
 @tailwind base;
 @layer base {
-    body {
-        @apply font-cinzel;
-        @apply bg-bank;
-        @apply bg-cover;
-        @apply bg-no-repeat;
-    }
+  body {
+    @apply font-cinzel;
+    @apply bg-bank;
+    @apply bg-cover;
+    @apply bg-no-repeat;
+  }
 }
 
 

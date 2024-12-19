@@ -1,13 +1,16 @@
 import {createSlice} from "@reduxjs/toolkit";
-
+import {fetchQuote} from "../api/qouteAction.ts";
 
 const quoteSlice = createSlice({
-    name: 'quote',
+    name: "quote",
     initialState: 'Winter is coming...',
-    reducers: {
-        putQuote: (_state, action) => action.payload,
+    reducers: {},
+    extraReducers: builder => {
+        builder
+            .addCase(fetchQuote.pending, () => 'Pending...')
+            .addCase(fetchQuote.fulfilled, (_state, action) => action.payload)
+            .addCase(fetchQuote.rejected, () => 'Failed to fetch quote data')
     }
 })
 
-export  const {putQuote} = quoteSlice.actions;
-export  default quoteSlice.reducer;
+export default quoteSlice.reducer;
